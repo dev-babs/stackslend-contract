@@ -1,0 +1,31 @@
+[project]
+name = 'lending-pool'
+description = 'Dual asset lending protocol on Stacks'
+authors = []
+telemetry = true
+cache_dir = './.cache'
+requirements = []
+
+[contracts.lending-pool]
+path = 'contracts/lending-pool.clar'
+clarity_version = 3
+epoch = 'latest'
+
+[contracts.mock-oracle]
+path = 'contracts/mock-oracle.clar'
+clarity_version = 3
+epoch = 'latest'
+
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
+
+[repl.remote_data]
+enabled = false
+api_url = 'https://api.hiro.so'
+
